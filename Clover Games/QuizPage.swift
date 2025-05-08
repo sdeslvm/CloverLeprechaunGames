@@ -86,10 +86,7 @@ struct QuizPage: View {
                     
                 
                 ZStack {
-                    Image("background")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
+                    
                     
                     VStack {
                         HStack {
@@ -118,6 +115,14 @@ struct QuizPage: View {
                     .padding()
                     
                 }
+                .frame(width: geometry.size.width, height: geometry.size.height)
+        .background(
+            Image(.background)
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+                .scaleEffect(1.1)
+        )
                 
                 LottieView(filename: "RotateDevice", contentMode: .scaleAspectFit, playReverse: true)
                     .frame(width: 200, height: 200)
